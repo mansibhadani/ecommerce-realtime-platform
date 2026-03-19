@@ -97,7 +97,7 @@
 
 ### 1. Clone and configure
 ```bash
-git clone https://github.com/YOUR_USERNAME/ecommerce-realtime-platform.git
+git clone https://github.com/mansibhadani/ecommerce-realtime-platform.git
 cd ecommerce-realtime-platform
 cp .env.example .env
 # Edit .env with your Snowflake credentials (optional for local-only run)
@@ -238,6 +238,6 @@ MIT — see [LICENSE](LICENSE)
 
 ## 👤 Author
 
-**Mansi Bhadani** · [LinkedIn](https://linkedin.com/in/YOUR_PROFILE) · [GitHub](https://github.com/YOUR_USERNAME)
+**Mansi Bhadani** · [LinkedIn](https://linkedin.com/in/in/mansi-bhadani) · [GitHub](https://github.com/mansibhadani)
 
 > *Built to demonstrate production-grade data engineering patterns used at scale.*
