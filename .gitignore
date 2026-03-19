@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+env/
+
+# Environment
+.env
+*.env.local
+
+# Spark
+derby.log
+metastore_db/
+spark-warehouse/
+/tmp/checkpoints/
+
+# dbt
+transformation/dbt/target/
+transformation/dbt/dbt_packages/
+transformation/dbt/logs/
+
+# Great Expectations
+quality/great_expectations/uncommitted/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Airflow
+airflow.db
+airflow.cfg
+webserver_config.py
+logs/

@@ -1,0 +1,27 @@
+name: ecommerce_analytics
+version: "1.7.0"
+config-version: 2
+
+profile: ecommerce_snowflake
+
+model-paths: ["models"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  ecommerce_analytics:
+    staging:
+      +schema: staging
+      +materialized: incremental
+      +on_schema_change: sync_all_columns
+    marts:
+      +schema: marts
+      +materialized: incremental
+
+packages:
+  - package: dbt-labs/dbt_utils
+    version: [">=1.1.0", "<2.0.0"]

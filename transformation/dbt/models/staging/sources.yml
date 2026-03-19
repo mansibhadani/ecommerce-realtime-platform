@@ -1,0 +1,52 @@
+version: 2
+
+sources:
+  - name: raw
+    database: ECOMMERCE
+    schema: RAW
+    description: "Raw tables landed by PySpark Structured Streaming from Kafka"
+    freshness:
+      warn_after: {count: 1, period: hour}
+      error_after: {count: 3, period: hour}
+    loaded_at_field: event_ts
+
+    tables:
+      - name: orders
+        description: "Exploded order line items from ecommerce.orders Kafka topic"
+        columns:
+          - name: order_id
+            tests: [not_null]
+          - name: customer_id
+            tests: [not_null]
+          - name: product_id
+            tests: [not_null]
+          - name: quantity
+            tests:
+              - not_null
+              - dbt_utils.accepted_range:
+                  min_value: 1
+                  max_value: 100
+          - name: unit_price
+            tests:
+              - not_null
+              - dbt_utils.accepted_range:
+                  min_value: 0.01
+          - name: currency
+            tests:
+              - accepted_values:
+                  values: ["USD", "EUR", "GBP", "CAD"]
+
+      - name: review_sentiments
+        description: "BERT-enriched review records from NLP pipeline"
+        columns:
+          - name: review_id
+            tests: [not_null, unique]
+          - name: sentiment_label
+            tests:
+              - accepted_values:
+                  values: ["POSITIVE", "NEGATIVE", "NEUTRAL"]
+          - name: sentiment_score
+            tests:
+              - dbt_utils.accepted_range:
+                  min_value: 0.0
+                  max_value: 1.0
