@@ -238,6 +238,6 @@ MIT — see [LICENSE](LICENSE)
 
 ## 👤 Author
 
-**Mansi Bhadani** · [LinkedIn](https://linkedin.com/in/in/mansi-bhadani) · [GitHub](https://github.com/mansibhadani)
+**Mansi Bhadani** · [LinkedIn](https://linkedin.com/in/mansi-bhadani) · [GitHub](https://github.com/mansibhadani)
 
 > *Built to demonstrate production-grade data engineering patterns used at scale.*
