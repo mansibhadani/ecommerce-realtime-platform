@@ -1,4 +1,4 @@
-# ⚡ Real-Time E-Commerce Analytics Platform
+# Real-Time E-Commerce Analytics Platform
 
 > End-to-end data engineering platform processing **1M+ events/day** with sub-second latency — built with Kafka, PySpark, Apache Iceberg, Snowflake, and dbt.
 
